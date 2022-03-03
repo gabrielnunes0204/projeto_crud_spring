@@ -1,0 +1,173 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand";
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+header {
+  grid-column: 1 / 9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  background: linear-gradient(to right, #000, #222);
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+}
+
+header ul li {
+  margin-right: 15px;
+}
+
+header ul a, .container header h1 a {
+  color: #fff;
+}
+
+.intro {
+  grid-column: 1 / 9;
+  margin: 50px auto 0 auto;
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 2rem;
+}
+
+.intro h3 {
+	margin: 20px auto;
+}
+
+.intro .api {
+	font-weight: normal;
+	color: #000;
+	transition: all 0.3s;
+	opacity: 0.7;
+}
+
+.intro .api:hover {
+	opacity: 1;
+}
+
+/* CADASTRO, LISTA E ALTERAÇÃO */
+
+.form, .formLista {
+  grid-column: 1 / 9;
+  margin: 50px auto 0 auto;
+}
+
+.form h2 {
+  text-align: center;
+}
+
+.formLista {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.formLista article {
+  margin-left: 35px;
+}
+
+.form label, .formLista label {
+  display: block;
+  font-size: 1.25rem;
+  margin-top: 25px;
+}
+
+.form input, .formLista input {
+  font-family: "Quicksand";
+  font-size: 1.15rem;
+  padding: 8px;
+  width: 300px;
+  margin-top: 5px;
+  outline: 0;
+}
+
+.form button, .formLista a {
+  display: block;
+  font-family: "Quicksand";
+  font-size: 1.15rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #000, #222);
+  color: #fff;
+  border: 1px solid rgba(0,0,0,0.5);
+  padding: 12px;
+  width: 300px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.botoes {
+  display: flex;
+}
+
+.formLista a {
+  width: 150px;
+  margin: 25px 5px 0 0;
+  text-align: center;
+}
+
+.formLista h2 {
+  font-size: 1.25rem;
+  margin: 15px 0;
+}
+
+span {
+  font-weight: normal;
+}
+
+footer {
+	grid-column: 1 / 9;
+	padding: 40px;
+	background: #000;
+	position: absolute;
+	width: 100%;
+	bottom: -20px;
+}
+
+footer p {
+	color: #fff;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.rodape_lista {
+	position: relative;
+	margin-top: 250px;
+}
+
+/* MENSAGENS DE ERRO E SUCESSO */
+
+.sucesso {
+	grid-column: 1 / 9;
+	font-size: 1.25rem;
+	font-weight: bold;
+	background: #468677;
+	color: #fff;
+	padding: 15px;
+	text-align: center;
+}
+
+.vazio {
+	grid-column: 1 / 9;
+	font-size: 2rem;
+	margin: 40px auto;
+	text-align: center;
+}
+

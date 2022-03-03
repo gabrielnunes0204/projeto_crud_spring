@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Lista </title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  
+  <div class="container">
+    <header>
+      <h1><a href="/">Cadastro</a></h1>
+      <ul>
+        <li><a href="/"> Home </a></li>
+        <li><a href="/cadastrar"> Cadastrar </a></li>
+        <li><a href="/listar"> <strong>Listar</strong> </a></li>
+      </ul>
+    </header>
+    
+    <h2 th:if="${sucessoExclusao}" th:text="${sucessoExclusao}" class="sucesso"></h2>
+    <h2 th:if="${sucessoAlteracao}" th:text="${sucessoAlteracao}" class="sucesso"></h2>
+    <h2 th:if="${vazio}" th:text="${vazio}" class="vazio"></h2>
+
+    <section class="formLista">
+      <article th:each="usuario : ${listaUsuarios}">
+      	<h2><strong> ID: </strong> <span th:text="${usuario.id}"></span></h2>
+        <h2><strong> Nome: </strong> <span th:text="${usuario.nome}"></span></h2>
+        <h2><strong> E-mail: </strong> <span th:text="${usuario.email}"></span></h2>
+        <h2><strong> Idade: </strong> <span th:text="${usuario.idade}"></span></h2>
+
+        <div class="botoes">
+          <a th:href="@{/deletar/{id}(id=${usuario.id})}"> Excluír </a>
+          <a th:href="@{/chamarAlterar/{id}(id=${usuario.id})}"> Alterar </a>
+        </div>
+      </article>
+    </section>
+    
+    <footer class="rodape_lista">
+    	<p> @Copyright - 2022 </p>
+    </footer>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
